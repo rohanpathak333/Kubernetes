@@ -7,3 +7,8 @@ export KOPS_STATE_STORE=s3://reyaz-kops-testbkt12345.k8s.local
 kops create cluster --name reyaz.k8s.local --zones ap-south-1a --control-plane-size t3.small --node-count=2 --node-size t3.micro
 
 kops update cluster --name reyaz.k8s.local --yes --admin
+
+
+
+kops export kubecfg reyaz.k8s.local --state=s3://<reyaz-kops-testbkt12345.k8s.local>
+
