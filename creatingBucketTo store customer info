@@ -4,11 +4,34 @@ aws s3api put-bucket-versioning --bucket rohan-kops-testbkt12345.k8s.local --reg
 
 export KOPS_STATE_STORE=s3://rohan-kops-testbkt12345.k8s.local 
 
+
+
+✅ Permanent Fix — Save It in Your Shell Profile
+Step 1️⃣ – Open your bash profile:
+sudo vi ~/.bashrc
+
+Step 2️⃣ – Add this line at the bottom:
+export KOPS_STATE_STORE=s3://reyaz-kops-testbkt12345.k8s.local
+
+Step 3️⃣ – Save and reload:
+source ~/.bashrc
+
+Step 4️⃣ – Verify:
+echo $KOPS_STATE_STORE
+
 kops create cluster --name rohan.k8s.local --zones ap-south-1a --control-plane-size t3.small --node-count=2 --node-size t3.micro
+
 
 kops update cluster --name rohan.k8s.local --yes --admin
 
 
 
 kops export kubecfg rohan.k8s.local --state=s3://<rohan-kops-testbkt12345.k8s.local>
+
+
+
+
+✅ You should see:
+
+s3://reyaz-kops-testbkt12345.k8s.local
 
