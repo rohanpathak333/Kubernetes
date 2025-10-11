@@ -35,3 +35,8 @@ kops export kubecfg rohan.k8s.local --state=s3://<rohan-kops-testbkt12345.k8s.lo
 
 s3://reyaz-kops-testbkt12345.k8s.local
 
+
+✅ To install metrics server:
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/high-availability-1.21+.yaml
+
+
